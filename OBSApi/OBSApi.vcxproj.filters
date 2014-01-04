@@ -67,6 +67,9 @@
     <ClCompile Include="SettingsPane.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="EffectSource.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ColorControl.h">
@@ -154,6 +157,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectSource.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
