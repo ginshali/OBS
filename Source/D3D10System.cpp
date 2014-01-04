@@ -645,6 +645,11 @@ void D3D10System::SetRenderTarget(Texture *texture)
     }
 }
 
+Texture* D3D10System::GetRenderTarget()
+{
+	return static_cast<Texture*>(curRenderTarget);
+}
+
 const D3D10_PRIMITIVE_TOPOLOGY topologies[] = {D3D10_PRIMITIVE_TOPOLOGY_POINTLIST, D3D10_PRIMITIVE_TOPOLOGY_LINELIST, D3D10_PRIMITIVE_TOPOLOGY_LINESTRIP, D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST, D3D10_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP};
 
 void D3D10System::Draw(GSDrawMode drawMode, DWORD startVert, DWORD nVerts)

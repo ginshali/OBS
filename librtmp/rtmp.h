@@ -30,7 +30,7 @@
 #if !defined(NO_CRYPTO) && !defined(CRYPTO)
 #define CRYPTO
 #else
-typedef size_t off_t;
+//typedef size_t off_t;
 #endif
 
 #pragma warning(disable:4996) //depricated warnings

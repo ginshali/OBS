@@ -452,7 +452,8 @@ public:
     virtual Shader* GetCurrentPixelShader()=0;
     virtual Shader* GetCurrentVertexShader()=0;
 
-    virtual void  SetRenderTarget(Texture *texture)=0;
+	virtual void  SetRenderTarget(Texture *texture) = 0;
+	virtual Texture* GetRenderTarget() = 0;
     virtual void  Draw(GSDrawMode drawMode, DWORD startVert=0, DWORD nVerts=0)=0;
 
 

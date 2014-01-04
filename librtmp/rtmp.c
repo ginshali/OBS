@@ -577,7 +577,7 @@ static const char *optinfo[] =
 static struct urlopt
 {
     AVal name;
-    off_t off;
+    size_t off;
     int otype;
     int omisc;
     char *use;
