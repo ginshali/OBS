@@ -138,5 +138,8 @@ public:
     void RemoveAudioFilter(UINT id);
 
     virtual bool GetLatestTimestamp(QWORD &timestamp);
+
+    void SortAudio(QWORD timestamp);
+    UINT QueryAudio2(float curVolume, bool bCanBurst=false);
 };
 

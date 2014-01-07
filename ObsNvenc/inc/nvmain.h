@@ -22,7 +22,7 @@
 #pragma warning(disable: 4005)
 
 #include <Main.h>
-#include <cuda.h>
+#include "cudaDynload.h"
 #include "nvEncodeAPI.h"
 
 extern ConfigFile **NvAppConfig;
@@ -56,5 +56,11 @@ struct OSMutexLocker
     ~OSMutexLocker() { if (enabled) OSLeaveMutex(h); }
     OSMutexLocker(OSMutexLocker &&other) : h(other.h), enabled(other.enabled) { other.enabled = false; }
 };
+
+template<typename T>
+inline bool dataEqual(const T& a, const T& b)
+{
+    return memcmp(&a, &b, sizeof(T)) == 0;
+}
 
 #endif
