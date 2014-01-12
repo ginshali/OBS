@@ -517,6 +517,8 @@ enum PreviewDrawType {
     Preview_Projector
 };
 
+void ResetWASAPIAudioDevice(AudioSource *source);
+
 struct FrameProcessInfo;
 
 //todo: this class has become way too big, it's horrible, and I should be ashamed of myself
@@ -632,7 +634,7 @@ private:
     String  strLanguage;
     bool    bTestStream;
     bool    bUseMultithreadedOptimizations;
-    bool    bRunning, bRecording, bRecordingOnly, bStartingUp, bStreaming;
+    bool    bRunning, bRecording, bRecordingOnly, bStartingUp, bStreaming, bKeepRecording;
     volatile bool bShutdownVideoThread, bShutdownEncodeThread;
     int     renderFrameWidth, renderFrameHeight; // The size of the preview only
     int     renderFrameX, renderFrameY; // The offset of the preview inside the preview control
@@ -804,7 +806,7 @@ private:
 
     String  streamReport;
 
-    String  strDashboard;
+    //String  strDashboard;
 
     List<IconInfo> Icons;
     List<FontInfo> Fonts;
@@ -1108,6 +1110,8 @@ public:
     BOOL HideNotificationAreaIcon();
 
     BOOL UpdateDashboardButton();
+
+    inline void ResetMic() {if (bRunning && micAudio) ResetWASAPIAudioDevice(micAudio);}
 };
 
 LONG CALLBACK OBSExceptionHandler (PEXCEPTION_POINTERS exceptionInfo);
